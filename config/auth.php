@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Admin;
+use App\Models\User;
+
 return [
 
     /*
@@ -53,7 +56,7 @@ return [
         ],
 
         'api-Admin' => [
-            'driver' => 'token',
+            'driver' => 'passport',
             'provider' => 'Admin',
             'hash' => false,
         ],
@@ -86,6 +89,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
+
     ],
 
     /*

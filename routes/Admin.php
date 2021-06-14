@@ -1,54 +1,44 @@
 <?php
 
-Route::post('/admin/login', 'AuthController@login')->name('admin.login');
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+use Illuminate\Http\Request;
 
-Route::prefix('Admin')->group(function () {
-    Route::get('/login', function () {
-        return view('Admin.loginAdmin');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: *');
+header('Access-Control-Allow-Headers: *');
+header('Content-Type: application/json; charset=UTF-8', true);
+
+
+/** Start Auth Route **/
+
+Route::middleware('auth:api-Admin')->group(function () {
+    //Auth_private
+    Route::prefix('Auth_private')->group(function()
+    {
+        Route::post('/change_password', 'AuthController@change_password')->name('Auth.change_password');
+        Route::post('/edit_profile', 'AuthController@edit_profile')->name('Auth.edit_profile');
+        Route::get('/my_info', 'AuthController@my_info')->name('Auth.my_info');
+        Route::post('/logout', 'AuthController@logout')->name('user.logout');
     });
-    Route::group(['middleware' => 'roles', 'roles' => ['Admin']], function () {
 
-        Route::get('/logout/logout', 'AuthController@logout')->name('user.logout');
-        Route::get('/home', 'AuthController@index')->name('admin.dashboard');
 
-        // Profile Route
-        Route::prefix('profile')->group(function () {
-            Route::get('/index', 'profileController@index')->name('profile.index');
-            Route::post('/index', 'profileController@update')->name('profile.update');
-        });
-
-        // Category Routes
-        Route::prefix('Category')->group(function () {
-            Route::get('/index', 'CategoryController@index')->name('Category.index');
-            Route::get('/allData', 'CategoryController@allData')->name('Category.allData');
-            Route::post('/create', 'CategoryController@create')->name('Category.create');
-            Route::get('/edit/{id}', 'CategoryController@edit')->name('Category.edit');
-            Route::post('/update', 'CategoryController@update')->name('Category.update');
-            Route::get('/destroy/{id}', 'CategoryController@destroy')->name('Category.destroy');
-            Route::get('/ChangeStatus/{id}', 'CategoryController@ChangeStatus')->name('Category.ChangeStatus');
-        });
-
-        // Color Routes
-        Route::prefix('Color')->group(function () {
-            Route::get('/index', 'ColorController@index')->name('Color.index');
-            Route::get('/allData', 'ColorController@allData')->name('Color.allData');
-            Route::post('/create', 'ColorController@create')->name('Color.create');
-            Route::get('/edit/{id}', 'ColorController@edit')->name('Color.edit');
-            Route::post('/update', 'ColorController@update')->name('Color.update');
-            Route::get('/destroy/{id}', 'ColorController@destroy')->name('Color.destroy');
-        });
-
-        // Product Routes
-        Route::prefix('Product')->group(function () {
-            Route::get('/index', 'ProductController@index')->name('Product.index');
-            Route::get('/allData', 'ProductController@allData')->name('Product.allData');
-            Route::get('/createForm', 'ProductController@createForm')->name('Product.createForm');
-            Route::post('/create', 'ProductController@create')->name('Product.create');
-            Route::get('/edit/{id}', 'ProductController@edit')->name('Product.edit');
-            Route::post('/update', 'ProductController@update')->name('Product.update');
-            Route::get('/destroy/{id}', 'ProductController@destroy')->name('Product.destroy');
-        });
-
-    });
 });
+/** End Auth Route **/
 
+/** Auth_general */
+
+Route::prefix('Auth_general')->group(function()
+{
+    Route::post('/login', 'AuthController@login')->name('Auth.login');
+    Route::post('/forget_password', 'AuthController@forget_password')->name('Auth.forget_password');
+    Route::post('/reset_password', 'AuthController@reset_password')->name('Auth.reset_password');
+});
