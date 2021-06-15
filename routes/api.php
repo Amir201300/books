@@ -56,3 +56,4 @@ Route::get('/home', 'GeneralController@home');
 Route::get('/cats', 'GeneralController@cats');
 Route::get('/authors', 'GeneralController@authors');
 
+
