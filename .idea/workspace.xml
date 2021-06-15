@@ -20,14 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0db9b9be-d00e-4032-9dce-f7bab62d8c13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/books.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/books.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/ReposatryProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ReposatryProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +237,7 @@
       <workItem from="1623573568756" duration="20000" />
       <workItem from="1623657112050" duration="502000" />
       <workItem from="1623677935679" duration="9595000" />
-      <workItem from="1623710131541" duration="6304000" />
+      <workItem from="1623710131541" duration="18146000" />
     </task>
     <servers />
   </component>
@@ -266,9 +261,9 @@
       <screen x="0" y="0" width="1176" height="624" />
     </state>
     <state x="22" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1176.624@0.0.1176.624" timestamp="1623713934544" />
-    <state x="422" y="235" key="NewPhpFileDialog" timestamp="1623719222623">
+    <state x="422" y="235" key="NewPhpFileDialog" timestamp="1623785191292">
       <screen x="0" y="0" width="1176" height="624" />
     </state>
-    <state x="422" y="235" key="NewPhpFileDialog/0.0.1176.624@0.0.1176.624" timestamp="1623719222623" />
+    <state x="422" y="235" key="NewPhpFileDialog/0.0.1176.624@0.0.1176.624" timestamp="1623785191292" />
   </component>
 </project>

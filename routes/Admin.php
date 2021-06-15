@@ -28,9 +28,7 @@ Route::middleware('auth:api-Admin')->group(function () {
         Route::post('/edit_profile', 'AuthController@edit_profile')->name('Auth.edit_profile');
         Route::get('/my_info', 'AuthController@my_info')->name('Auth.my_info');
         Route::post('/logout', 'AuthController@logout')->name('user.logout');
-
-
-
+    });
         /**Author*/
             Route::post('/add_Author','AuthorController@add_Author')->name('Author.add_Author');
             Route::post('/edit_Author/{Author_id}','AuthorController@edit_Author')->name('Author.edit_Author');
@@ -59,7 +57,19 @@ Route::middleware('auth:api-Admin')->group(function () {
         Route::post('/delete_User/{User_id}','UserController@delete_User')->name('User.delete_User');
         Route::post('/All_User','UserController@All_User')->name('User.All_User');
         Route::post('/single_User/{User_id}','UserController@single_User')->name('User.single_User');
-    });
+
+
+
+        /**Book*/
+        Route::post('/add_Book','BookController@add_Book')->name('Book.add_Book');
+        Route::post('/edit_Book/{Book_id}','BookController@edit_Book')->name('Book.edit_Book');
+        Route::post('/delete_Book/{Book_id}','BookController@delete_Book')->name('Book.delete_Book');
+        Route::post('/All_Book','BookController@All_Book')->name('Book.All_Book');
+        Route::post('/single_Book/{Book_id}','BookController@single_Book')->name('Book.single_Book');
+        Route::post('/Book_author','BookController@Book_author')->name('Book.Book_author');
+        Route::post('/Book_cat','BookController@Book_cat')->name('Book.Book_cat');
+
+
 
 
 

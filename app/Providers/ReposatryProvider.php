@@ -32,5 +32,10 @@ class ReposatryProvider extends ServiceProvider
             'App\Interfaces\UserInterface',
             'App\Reposatries\UserReposatry'
         );
+        $this->app->bind(
+            'App\Interfaces\BookInterface',
+            'App\Reposatries\BookReposatry'
+        );
+
     }
 }
